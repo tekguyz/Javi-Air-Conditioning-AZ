@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Logo-Derived Brand Spectrum */
+  --color-javi-red: oklch(55% 0.22 25);     /* Primary Action Trigger / Emergency Elements */
+  --color-javi-blue: oklch(45% 0.18 255);   /* Authoritative Corporate Baseline (Logo Script Blue) */
+  --color-javi-sun: oklch(85% 0.20 90);     /* System Diagnostic / Highlight Elements */
+  
+  /* High-Contrast Readability Continuum */
+  --color-text-dark: oklch(18% 0.02 255);
+  --color-text-light: oklch(99% 0.005 255);
+  --color-bg-clean: oklch(98% 0.005 255);
+  
+  /* Fluid Typography Guardrails: clamp(MIN, PREFERRED, MAX) */
+  --font-fluid-h1: clamp(2.25rem, 6vw + 1rem, 4.5rem);     /* Scales from Mobile to Wide Desktop smoothly */
+  --font-fluid-h2: clamp(1.75rem, 4vw + 1rem, 3rem);       /* Section Subheadings */
+  --font-fluid-body: clamp(0.95rem, 0.5vw + 0.8rem, 1.1rem); /* High-legibility Body Copy */
+
+  /* Fluid Layout Guardrails */
+  --space-fluid-container: clamp(2rem, 6vw, 6rem);          /* Dynamic Section Vertical Padding */
+  --space-fluid-gap: clamp(1rem, 2.5vw, 2.5rem);            /* Dynamic Element/Bento Gaps */
+  
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-smooth: true;
+    scroll-padding-top: 80px;
+    background-color: var(--color-bg-clean);
+    color: var(--color-text-dark);
+    font-size: var(--font-fluid-body);
+  }
+  
+  /* Visual slant utility mimicking the high-energy slash accents seen in their branding */
+  .javi-dynamic-gradient {
+    background: linear-gradient(135deg, var(--color-javi-blue) 0%, oklch(35% 0.15 260) 100%);
+  }
+}
+
+@utility scrollbar-none {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;      /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;            /* Chrome, Safari, Opera */
+  }
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

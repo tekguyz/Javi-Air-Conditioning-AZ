@@ -1,0 +1,6 @@
+{
+  "name": "Javi Air Conditioning",
+  "description": "Javi Air Conditioning HVAC landing page with dual-language support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
